@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="BossanovaJamVersion2.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title>Bossanova Jam</title>
+
+    <link href="Content/bootstrap.css" rel="stylesheet">
+    <link href="Content/style.css" rel="stylesheet">
+</head>
+<body class="container">
+    <form runat="server">
+    <asp:ScriptManager runat="server">
+        <Scripts>
+            <%--Framework Scripts--%>
+            <asp:ScriptReference Name="MsAjaxBundle" />
+            <asp:ScriptReference Name="jquery" />
+            <asp:ScriptReference Name="jquery.ui.combined" />
+            <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+            <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+            <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+            <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+            <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+            <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+            <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+            <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+            <asp:ScriptReference Name="WebFormsBundle" />
+            <%--Site Scripts--%>
+        </Scripts>
+    </asp:ScriptManager>
+    <header>
+        <h1>Bossanova Jam</h1>
+
+	    <ul class="nav nav-pills">
+		    <li class="active"><a runat="server" href="~/">Prva stran</a></li>
+		    <li><a href="Kosarica.aspx">Nakup</a></li>
+		    <li><a id="A1" runat="server" href="~/About.aspx">O nas</a></li>
+		    <li class="pull-right" id="loginLink" runat="server"><a href="/Account/Login.aspx"">Prijava</a></li>
+	    </ul>
+        
+        <section id="login">
+            <asp:LoginView runat="server" ViewStateMode="Disabled">
+                <LoggedInTemplate>
+                    <p>
+                        Hello, <a runat="server" class="username" href="~/Account/Manage.aspx" title="Manage your account">
+                            <asp:LoginName runat="server" CssClass="username" /></a>!
+                        <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" />
+                    </p>
+                </LoggedInTemplate>
+            </asp:LoginView>
+        </section>  
+    </header>
+
+    <div id="body">
+        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+        <section class="content-wrapper main-content clear-fix">
+            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+        </section>
+    </div>
+
+    <footer>
+        <p>
+			<span class="pull-left">Narejeno za Fakulteto za računalništvo in informatiko, Spletno Programiranje</span>
+			<span class="pull-right">&copy; <%: DateTime.Now.Year %> Angelina Temelkovska</span>
+		</p>
+    </footer>
+    </form>
+</body>
+</html>

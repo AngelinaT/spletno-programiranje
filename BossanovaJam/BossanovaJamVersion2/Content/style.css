@@ -1,0 +1,77 @@
+.container{
+	background: #fff;
+}
+html{
+	background: #903;
+}
+body {
+	min-width: 500px;
+	color: #300;
+}
+.my-grid > div > div {
+	background: #e8e0e5;
+	border-radius: 15px;
+	overflow: hidden;
+}
+.btn-danger {
+	background: #903;
+}
+
+.my-input{
+	width: 15em;
+}
+.my-grid > div {
+	margin-bottom: 15px;
+}
+.my-grid img {
+	width: 100%;
+}
+.my-grid .description {
+	/*Visina izdelkov na prvi strani*/
+	height: 8em;
+	padding: 5px;
+}
+.my-grid .description .pull-right > *{ 
+	/* Cena in gumb Kupi na Prvi strani */
+	width: 60px;
+	display: inline-block;
+	margin-bottom: 1px;
+}
+.my-search > *{
+	display: inline-block;
+}
+table.cart img{
+	width: 100px;
+}
+table.cart .amount{
+	width: 5em;
+}
+table.cart tr td {
+	vertical-align: middle;
+}
+.large-label {
+	font-size: 100%;
+}
+
+.validations img {
+	width: 100%;
+}
+
+
+.my-responsive > div{
+	background: #f00;
+	width: 24%;
+	display: inline-block;
+}
+@media(max-width: 800px){
+	.my-responsive > div{
+		background: #f0f;
+		width: 30%;
+	}
+}
+@media(max-width: 500px){
+	.my-responsive > div{
+		background: #f0f;
+		width: 45%;
+	}
+}
