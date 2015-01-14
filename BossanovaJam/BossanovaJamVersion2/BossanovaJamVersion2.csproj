@@ -134,6 +134,12 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\style.css" />
+    <Content Include="pictures\bebel_gilberto-all_in_one.jpg" />
+    <Content Include="pictures\freedom_orchestra-freedom_bossa.jpg" />
+    <Content Include="pictures\joao_gilberto-getz.jpg" />
+    <Content Include="pictures\sergio_mendes-herb_alpert.jpg" />
+    <Content Include="pictures\sergio_mendes-look_around.jpg" />
+    <Content Include="pictures\sergio_mendes-vintage.jpg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Kosarica.aspx" />
     <Content Include="Narocila.aspx" />
