@@ -63,6 +63,8 @@ namespace BossanovaJamVersion2
 
                 iz.ExecuteNonQuery();
                 bazaPovezava.Close();
+
+                Response.Redirect("/");
             }
         }
     }
