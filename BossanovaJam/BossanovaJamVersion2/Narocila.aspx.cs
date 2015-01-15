@@ -12,7 +12,10 @@ namespace BossanovaJamVersion2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["loggedIn"] == null)
+            {
+                Response.Redirect("/");
+            }
         }
 
         protected void narocilaGrid_RowCommand(object sender, GridViewCommandEventArgs e)

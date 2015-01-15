@@ -52,8 +52,8 @@ namespace BossanovaJamVersion2
             {
                 bazaPovezava.Open();
                 MySqlCommand iz = new MySqlCommand("SELECT * FROM Izdelek WHERE id_izdelek = " + idIzdelka, bazaPovezava);
-                izdelki.DataSource = iz.ExecuteReader();
-                izdelki.DataBind();
+                izdelki1.DataSource = iz.ExecuteReader();
+                izdelki1.DataBind();
                 bazaPovezava.Close();
             }
 

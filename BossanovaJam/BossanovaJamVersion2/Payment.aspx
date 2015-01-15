@@ -12,10 +12,11 @@
                 <label hidden>Priimek:</label>
                 <input type="text" name="priimek" placeholder="Priimek" class="form-control" required />
                 <br>
-                <div>
-                    <label hidden>E-mail:</label>
-                    <input type="email" name="email" placeholder="email@domena.com" class="form-control" />
+                <div class="input-group">
+                    <span class="input-group-addon">@</span>
+                    <asp:TextBox id="email" runat="server" CssClass="form-control" />
                 </div>
+                <asp:RegularExpressionValidator ID="EmailVal" runat="server" ControlToValidate="email" ErrorMessage="Vnesi pravilen email naslov" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"/>
                 <br>
             </fieldset>
         </div>

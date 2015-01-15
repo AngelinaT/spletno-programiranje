@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="Košarica" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Kosarica.aspx.cs" Inherits="BossanovaJamVersion2.Kosarica" %>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    
-    
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">    
     <div>
         <div class="my-search pull-right">
         <asp:DropDownList ID="valuta" runat="server" AutoPostBack="True" CssClass="form-control my-input" DataValueField="valuta" AppendDataBoundItems="True">
@@ -16,7 +15,7 @@
 
 		<h4>Vsebina košarice</h4>
 		<hr>
-        <asp:Repeater ID="izdelki" runat="server">
+        <asp:Repeater ID="izdelki1" runat="server">
             <ItemTemplate>
 			    <img src="<%# Eval("slika") %>" alt="<%# Eval("avtor") %> <%# Eval("naslov") %>" class="pull-left thumbnail" width="100">
 				<p> &nbsp; Leto: <%# Eval("leto") %></p>

@@ -4,34 +4,45 @@
 <div>
     <br>
     <div class="my-search">
-        <asp:DropDownList ID="leto" runat="server" AutoPostBack="True" CssClass="form-control my-input" DataValueField="leto" AppendDataBoundItems="True">
+        <asp:DropDownList ID="leto" runat="server" AutoPostBack="true" CssClass="form-control my-input" DataValueField="leto" AppendDataBoundItems="True" OnSelectedIndexChanged="filter">
             <asp:ListItem Value="0" Text="-- Leto --"></asp:ListItem>
         </asp:DropDownList>
-        <asp:DropDownList ID="avtor" runat="server" AutoPostBack="True" CssClass="form-control my-input" DataValueField="avtor" AppendDataBoundItems="True">
+        <asp:DropDownList ID="avtor" runat="server" AutoPostBack="true" CssClass="form-control my-input" DataValueField="avtor" AppendDataBoundItems="True" OnSelectedIndexChanged="filter">
             <asp:ListItem Value="0" Text="-- Avtor --"></asp:ListItem>
         </asp:DropDownList>    
     </div>
     <br>
 
-    <div class="row my-grid">
-        <asp:Repeater ID="izdelki" runat="server">
-            <ItemTemplate>
-                <div class="col-md-3 col-sm-4 col-xs-6">
-			        <div>
-				        <img src="<%# Eval("slika") %>" alt="<%# Eval("avtor") %> <%# Eval("naslov") %>">
-				        <div class="description">
-                            <a href="Kosarica.aspx?izdelek=<%# Eval("id_izdelek") %>" class="buy btn btn-danger btn-sm">
-                                <%# Eval("cena") %>€
-							    <i class="glyphicon glyphicon-shopping-cart"></i>
-                            </a>
-					        <p>Leto: <%# Eval("leto") %></p>
-					        <p>Avtor: <%# Eval("avtor") %></p>
-					        <p>Naslov: <%# Eval("naslov") %></p>
-				        </div>
-			        </div>
-		        </div>
-            </ItemTemplate>
-        </asp:Repeater>
-    </div>
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
+            <div class="row my-grid">
+                <asp:Repeater ID="izdelki" runat="server">
+                    <ItemTemplate>
+                        <div class="col-md-3 col-sm-4 col-xs-6">
+			                <div>
+				                <img src="<%# Eval("slika") %>" alt="<%# Eval("avtor") %> <%# Eval("naslov") %>">
+				                <div class="description">
+                                    <div class="pull-right">
+                                        <a href="Kosarica.aspx?izdelek=<%# Eval("id_izdelek") %>" class="buy btn btn-danger btn-sm">
+                                            <%# Eval("cena") %>€
+							                <i class="glyphicon glyphicon-shopping-cart"></i>
+                                        </a>
+                                    </div>
+					                <p>Leto: <%# Eval("leto") %></p>
+					                <p>Avtor: <%# Eval("avtor") %></p>
+					                <p>Naslov: <%# Eval("naslov") %></p>
+				                </div>
+			                </div>
+		                </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
+        </ContentTemplate>
+        <Triggers>
+            <asp:AsyncPostBackTrigger ControlID="leto"/>
+            <asp:AsyncPostBackTrigger ControlID="avtor"/>
+        </Triggers>
+    </asp:UpdatePanel>
+    
 </div>
 </asp:Content>

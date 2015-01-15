@@ -49,13 +49,13 @@ namespace BossanovaJamVersion2
                 MySqlCommand iz = new MySqlCommand("INSERT INTO Narocila (ime, priimek, email, naslov, postna_stevilka, mesto, nacini_placila, komentar, je_poslano, avtor, naslovIz, leto, cena) VALUES (@ime, @priimek, @email, @naslov, @postna_stevilka, @mesto, @nacini_placila, @komentar, 0, @avtor, @naslovIz, @leto, @cena)", bazaPovezava);
                 iz.Parameters.Add("@ime", Request.Form["ime"]);
                 iz.Parameters.Add("@priimek", Request.Form["priimek"]);
-                iz.Parameters.Add("@email", Request.Form["email"]);
+                iz.Parameters.Add("@email", email.Text);
                 iz.Parameters.Add("@naslov", Request.Form["naslov"]);
                 iz.Parameters.Add("@postna_stevilka", Request.Form["postna_stevilka"]);
                 iz.Parameters.Add("@mesto", Request.Form["mesto"]);
                 iz.Parameters.Add("@nacini_placila", Request.Form["nacini_placila"]);
                 iz.Parameters.Add("@komentar", Request.Form["komentar"]);
-
+                
                 iz.Parameters.Add("@avtor", Request.Form["avtor"]);
                 iz.Parameters.Add("@leto", Request.Form["leto"]);
                 iz.Parameters.Add("@cena", Request.Form["cena"]);

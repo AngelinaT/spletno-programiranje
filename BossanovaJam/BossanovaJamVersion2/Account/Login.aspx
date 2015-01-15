@@ -1,47 +1,32 @@
 ﻿<%@ Page Title="Log in" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="BossanovaJamVersion2.Account.Login" %>
-<%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <hgroup class="title">
-        <h1><%: Title %></h1>
-    </hgroup>
-    <section id="loginForm">
-        <h2>Use a local account to log in.</h2>
-        <asp:Login runat="server" ViewStateMode="Disabled" RenderOuterTable="false">
-            <LayoutTemplate>
-                <p class="validation-summary-errors">
-                    <asp:Literal runat="server" ID="FailureText" />
-                </p>
-                <fieldset>
-                    <legend>Log in Form</legend>
-                    <ol>
-                        <li>
-                            <asp:Label runat="server" AssociatedControlID="UserName">User name</asp:Label>
-                            <asp:TextBox runat="server" ID="UserName" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName" CssClass="field-validation-error" ErrorMessage="The user name field is required." />
-                        </li>
-                        <li>
-                            <asp:Label runat="server" AssociatedControlID="Password">Password</asp:Label>
-                            <asp:TextBox runat="server" ID="Password" TextMode="Password" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="field-validation-error" ErrorMessage="The password field is required." />
-                        </li>
-                        <li>
-                            <asp:CheckBox runat="server" ID="RememberMe" />
-                            <asp:Label runat="server" AssociatedControlID="RememberMe" CssClass="checkbox">Remember me?</asp:Label>
-                        </li>
-                    </ol>
-                    <asp:Button runat="server" CommandName="Login" Text="Log in" />
-                </fieldset>
-            </LayoutTemplate>
-        </asp:Login>
-        <p>
-            <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled">Register</asp:HyperLink>
-            if you don't have an account.
-        </p>
-    </section>
-
-    <section id="socialLoginForm">
-        <h2>Use another service to log in.</h2>
-        <uc:OpenAuthProviders runat="server" ID="OpenAuthLogin" />
-    </section>
+    <br>
+    <br>
+    <form>
+        <div>
+            <div class="row">
+			    <div class="col-md-4 col-sm-6">
+				    <label>Uporabniško ime:</label>                   
+                    <asp:TextBox AutoCompleteType="Enabled" ID="user" runat="server" CssClass="form-control"/>
+                    <asp:RequiredFieldValidator ID="u_ime" ControlToValidate="user" Text="Vnos je obvezen!" runat="server" />
+                </div>
+		    </div>
+		    <div class="row">
+			    <div class="col-md-4 col-sm-6">
+				    <label>Geslo:</label>
+                    <asp:TextBox AutoCompleteType="Enabled" ID="pass" runat="server" TextMode="password" CssClass="form-control"/>
+                    <asp:RequiredFieldValidator ID="geslo" ControlToValidate="pass" Text="Vnos je obvezen!" runat="server" />
+			    </div>
+		    </div>
+        </div>
+		<div class="row">
+			<div class="col-md-4 col-sm-6">
+                <asp:Button ID="prijava" Text="Prijavi se" CssClass="btn btn-danger" runat="server"/>
+                <asp:CustomValidator ControlToValidate="pass" onServerValidate="validacija" Text="Vneseni podatki so napačni." runat="server" />
+			</div>
+		</div>
+        <br>
+        <br>
+	</form>
 </asp:Content>

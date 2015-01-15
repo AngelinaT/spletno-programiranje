@@ -33,10 +33,10 @@
         <h1>Bossanova Jam</h1>
 
 	    <ul class="nav nav-pills">
-		    <li class="active"><a runat="server" href="~/">Prva stran</a></li>
-		    <li><a href="Kosarica.aspx">Nakup</a></li>
+		    <li><a runat="server" href="~/">Prva stran</a></li>
+		    <li><a href="/Kosarica.aspx">Nakup</a></li>
 		    <li><a id="A1" runat="server" href="~/About.aspx">O nas</a></li>
-		    <li class="pull-right" id="loginLink" runat="server"><a href="/Account/Login.aspx"">Prijava</a></li>
+		    <li class="pull-right" id="loginLink" runat="server"><a href="/Account/Login.aspx""><%= Session["loggedIn"] == null ? "Prijava" : "Admin" %></a></li>
 	    </ul>
         
         <section id="login">

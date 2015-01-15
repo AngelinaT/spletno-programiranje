@@ -2,7 +2,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div>
         <br>
-        <asp:GridView ID="narocilaGrid" runat="server" AutoGenerateColumns="False" DataKeyNames="id_narocila" DataSourceID="SqlDataSource1" OnRowCommand="narocilaGrid_RowCommand" CssClass="table" BorderColor="#eeeeee">
+        <asp:GridView ID="narocilaGrid" runat="server" AutoGenerateColumns="False" DataKeyNames="id_narocila" DataSourceID="SqlDataSource1" OnRowCommand="narocilaGrid_RowCommand" CssClass="table" BorderColor="#eeeeee" EnableSortingAndPagingCallbacks="True" AllowSorting="True" RowStyle-VerticalAlign="Middle" RowStyle-CssClass="table-bordered">
             <Columns>
                 <asp:BoundField DataField="id_narocila" HeaderText="id_narocila" InsertVisible="False" ReadOnly="True" SortExpression="id_narocila" Visible="False" />
                 <asp:BoundField DataField="ime" HeaderText="Ime" SortExpression="ime" />

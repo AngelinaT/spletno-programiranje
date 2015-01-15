@@ -7,29 +7,54 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BossanovaJamVersion2.Account
-{
-
-
-    public partial class Login
-    {
-
+namespace BossanovaJamVersion2.Account {
+    
+    
+    public partial class Login {
+        
         /// <summary>
-        /// RegisterHyperLink control.
+        /// user control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink RegisterHyperLink;
-
+        protected global::System.Web.UI.WebControls.TextBox user;
+        
         /// <summary>
-        /// OpenAuthLogin control.
+        /// u_ime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::BossanovaJamVersion2.Account.OpenAuthProviders OpenAuthLogin;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator u_ime;
+        
+        /// <summary>
+        /// pass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox pass;
+        
+        /// <summary>
+        /// geslo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator geslo;
+        
+        /// <summary>
+        /// prijava control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button prijava;
     }
 }

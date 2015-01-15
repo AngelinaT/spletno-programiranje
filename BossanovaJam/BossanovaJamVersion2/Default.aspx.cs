@@ -20,6 +20,7 @@ namespace BossanovaJamVersion2
             {
                 if (!IsPostBack)
                 {
+                    //Sortiranje izdelkov
                     bazaPovezava.Open();
                     MySqlCommand bazaUkaz = new MySqlCommand("SELECT DISTINCT leto FROM Izdelek", bazaPovezava);
                     MySqlDataReader reader = bazaUkaz.ExecuteReader();
@@ -34,21 +35,27 @@ namespace BossanovaJamVersion2
                     bazaPovezava.Close();
                 }
 
-                bazaPovezava.Open();
-                String izdelkiUkaz = "SELECT * FROM Izdelek";
-                ArrayList filters = new ArrayList();
-                if (leto.SelectedIndex > 0) filters.Add("leto = '" + leto.SelectedValue + "'");
-                if (avtor.SelectedIndex > 0) filters.Add("avtor = '" + avtor.SelectedValue + "'");
-                if (filters.Count > 0) izdelkiUkaz += " WHERE " + String.Join(" AND ", (string[])filters.ToArray(typeof(string)));
-                izdelki.DataSource = new MySqlCommand(izdelkiUkaz, bazaPovezava).ExecuteReader();
-                izdelki.DataBind();
-                bazaPovezava.Close();
+                filter(null, null);
             }
             catch (Exception ex)
             {
                 bazaPovezava.Close();
                 Response.Write("Prišlo je do napake pri branju baze." + ex.StackTrace);
             }
+        }
+
+        protected void filter(object sender, EventArgs e)
+        {
+            //Prikaz izdelkov
+            bazaPovezava.Open();
+            String izdelkiUkaz = "SELECT * FROM Izdelek";
+            ArrayList filters = new ArrayList();
+            if (leto.SelectedIndex > 0) filters.Add("leto = '" + leto.SelectedValue + "'");
+            if (avtor.SelectedIndex > 0) filters.Add("avtor = '" + avtor.SelectedValue + "'");
+            if (filters.Count > 0) izdelkiUkaz += " WHERE " + String.Join(" AND ", (string[])filters.ToArray(typeof(string)));
+            izdelki.DataSource = new MySqlCommand(izdelkiUkaz, bazaPovezava).ExecuteReader();
+            izdelki.DataBind();
+            bazaPovezava.Close();
         }
 
     }
