@@ -26,9 +26,11 @@
         </asp:Repeater>
         <br>
 		<br>
-		<a href="Payment.aspx?izdelek=<%= Request.QueryString["izdelek"] %>" class="btn btn-danger">
-			Naprej
-		</a>
+        <asp:Panel ID="nextShow" runat="server">
+		    <a href="Payment.aspx?izdelek=<%= Request.QueryString["izdelek"] %>" class="btn btn-danger">
+			    Naprej
+		    </a>
+        </asp:Panel>
 		<br>
 		<br>
 		<br>

@@ -29,5 +29,14 @@ namespace BossanovaJamVersion2 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater izdelki1;
+        
+        /// <summary>
+        /// nextShow control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel nextShow;
     }
 }

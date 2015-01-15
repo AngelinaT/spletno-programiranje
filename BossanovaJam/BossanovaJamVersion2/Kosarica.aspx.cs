@@ -48,6 +48,7 @@ namespace BossanovaJamVersion2
             
 
             String idIzdelka = Request.QueryString["izdelek"];
+            nextShow.Visible = idIzdelka != null;
             if (idIzdelka != null)
             {
                 bazaPovezava.Open();
@@ -57,7 +58,6 @@ namespace BossanovaJamVersion2
                 bazaPovezava.Close();
             }
 
-            
         }
 
         
